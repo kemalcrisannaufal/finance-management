@@ -26,8 +26,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               Row(
                 children: [
                   const CircleAvatar(
-                    radius: 30,
-                  ),
+                      radius: 30,
+                      backgroundImage: AssetImage(
+                        'assets/images/foto.jpg',
+                      )),
                   const SizedBox(width: 20),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -64,5 +66,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(130);
+  Size get preferredSize => const Size.fromHeight(100);
 }
