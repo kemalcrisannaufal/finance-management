@@ -1,12 +1,13 @@
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
-  var pendapatan = 0.obs;
-  var pengeluaran = 0.obs;
+class AddPendapatanController extends GetxController {
+  late TextEditingController pendapatanController;
 
   @override
   void onInit() {
     super.onInit();
+    pendapatanController = TextEditingController();
   }
 
   @override
@@ -17,10 +18,5 @@ class HomeController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-  }
-
-  void resetData() {
-    pendapatan.value = 0;
-    pengeluaran.value = 0;
   }
 }

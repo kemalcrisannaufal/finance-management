@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class InformationCardView extends GetView {
-  const InformationCardView({Key? key}) : super(key: key);
+  final int pendapatan;
+  final int pengeluaran;
+
+  const InformationCardView({
+    required this.pendapatan,
+    required this.pengeluaran,
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     var titleTextStyle = TextStyle(
@@ -52,7 +59,7 @@ class InformationCardView extends GetView {
                         style: titleTextStyle,
                       ),
                       Text(
-                        'IDR 150000',
+                        'IDR ' + pengeluaran.toString(),
                         style: subtitleTextStyle,
                       ),
                     ],
@@ -75,7 +82,7 @@ class InformationCardView extends GetView {
                         style: titleTextStyle,
                       ),
                       Text(
-                        'IDR 850000',
+                        'IDR ' + pendapatan.toString(),
                         style: subtitleTextStyle,
                       ),
                     ],

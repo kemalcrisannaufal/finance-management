@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_leaning/local_notifications.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String userName;
@@ -55,8 +56,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ],
               ),
               IconButton(
-                onPressed: onNotificationPressed,
-                icon: const Icon(Icons.notifications),
+                onPressed: () {
+                  LocalNotifications.showSimpleNotification(
+                      title: "asa", body: "as", payload: "as");
+                },
+                icon: const Icon(
+                  Icons.notifications,
+                  color: Colors.blue,
+                  size: 30,
+                ),
               ),
             ],
           ),
@@ -66,5 +74,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(120);
 }
